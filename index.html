@@ -18,7 +18,8 @@
     body{
       margin: 0;
       padding:0;
-      font-family: "Arial", Gadget, sans-serif;
+      font-family: "Roboto", sans-serif;
+      
     }
     header{
        width: 100%;
@@ -28,13 +29,14 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: url(https://th.bing.com/th/id/OIG.b0BbOz4obSEK6AVjrAV3?pid=ImgGn) no-repeat;
+      background: url(back.jpg) no-repeat;
       background-size:cover;
       background-position: center;
       background-image: rgb(255, 255, 255, .4);
+      box-shadow: 0px 0px 3px 0px rgb(0, 0, 0, .6);
     }
     header .header{
-      margin-top: -120px;
+      
       background-color: transparent;
       border: none;
       display: flex;
@@ -44,15 +46,28 @@
     list-style: none;
     display: flex;
     flex-direction: row;
-    gap: 50px;
+    gap: 10px;
     margin-left: -40px;
     }
     .header ul li a{
       text-decoration: none;
-      background-color: rgb(80, 80, 80, .5);
+      background-color: transparent;
       padding: 5px;
-      border-radius: 3px;
-      color: rgb(255, 255, 255, .7);
+      font-weight: 600;
+      background-color: rgb(255, 255, 255,.7);
+      color: rgb(80, 80, 80);
+      box-shadow: 0px 0px 3px 0px rgb(0, 0, 0, .6);
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+    @media only screen and (max-width:295px){
+      .header ul li a{
+        font-size: 0.7em;
+      }
+    }
+    .header ul li a:hover{
+      box-shadow: none;
+      color: rgb(80, 80, 80);
     }
     @media only screen and (max-width:450px){
       header .header ul{
@@ -63,10 +78,14 @@
   text-align: center;
   padding: 8px 10px;
   border-radius: 5px;
-  font-size: 1.9em;
-  background-color: rgb(255, 255, 255, .6);
-  color: rgb(80, 80, 80);
-text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+  font-size: 1.5em;
+  background-color: rgb(255, 255, 255,.7);
+  color: rgb(0, 0, 128,.7);
+  text-shadow: #FFFCA8 1px 1px 0px, #9C9C9C 2px 2px 0px;
+
+
+
+
 }
 header h2{
   margin-top: 40px;
@@ -74,9 +93,10 @@ header h2{
   text-align: center;
   padding: 8px 10px;
   border-radius: 5px;
-  font-size: 1.4em;
-  background-color: rgb(255, 255, 255, .6);
-  color: rgb(80, 80, 80);
+  font-size: 1.2em;
+  background-color: rgb(255, 255, 255,.7);
+  color: rgb(0, 0, 0,.7);
+  
 }
 header a{
   text-align: center;
@@ -90,9 +110,463 @@ header a svg{
   padding: 5px;
   border-radius: 50%;
 }
-.content{
-  height: 500px;
+main{
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+  display: block;
+  padding: 10px;
 }
+main .content{
+  width: 100%;
+  height: 450px;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 1.5s, transform 1.5s;
+  box-shadow: 0px 0px 3px 0px rgb(0, 0, 0, .6);
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  background: url(https://services.meteored.com/img/article/las-playas-espanolas-se-quedan-sin-arena-1660903670354_1280.jpeg) no-repeat;
+  background-size:cover;
+  background-position: center;
+}
+main .cal{
+  width: 49%;
+  float: right;
+  height: 100%;
+  margin-bottom: 10px;
+  
+  padding: 20px 10px;   
+}
+.cal .container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.cal .container p {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: rgb(80, 80, 80);
+}
+.cal .container form label {
+  display: block;
+  margin-top: 10px;
+}
+
+.cal .container form input,
+form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  box-shadow: 0px 0px 3px 0px rgb(0, 0, 0, .6);
+}
+
+.cal .container form input[type="checkbox"] {
+  margin-top: 0;
+  box-shadow: none;
+}
+
+.cal .container .button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.cal .container .ret{
+  float: left;
+  border: none;
+  padding: 5px;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  box-shadow: 0px 0px 3px 0px rgb(0, 0, 0, .6);
+} 
+
+.cal .container .sig{
+  float: right;
+  border: none;
+  padding: 4px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  box-shadow: 0px 0px 3px 0px rgb(0, 0, 0, .6);
+} 
+
+.cal .container button:hover {
+  background-color: #45a049;
+}
+.cal .calendario {
+  width: 400px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1.5px 1.5px 5px 0px rgb(0, 0, 0, .6);
+}
+@media only screen and (max-width:892px){
+  .cal .calendario{
+    width: 100%;
+  }
+}
+
+.cal .mes {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cal .anterior, .siguiente {
+  cursor: pointer;
+}
+
+.cal .dias_semana {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.cal .dias {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.dias div {
+  padding: 3px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: center;
+  margin: 1px;
+}
+
+
+
+.calendario .dias div.disabled {
+  pointer-events: none;
+  background-color: #999; /* Cambia el color de fondo a uno más oscuro */
+  color: #fff; /* Cambia el color del texto a blanco */
+}
+
+.dias div.seleccionado, div.seleccionado-salida {
+  background-color: #007bff;
+  color: #fff;
+}
+main .conten{
+  width: 49%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+}
+main .conten .slider {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}   
+
+
+main .conten .slider-container {
+  display: flex;
+  position: relative;
+  width:100%;
+  height: 100%;
+
+}
+main .conten .slide {
+  flex: 0 0 100%;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  transition: all 0.5s ease-in-out;
+  text-align: center;
+}
+main .conten img{
+width: 100%;
+height: 100%;
+margin-bottom: 0;
+}
+
+main .conten .slide.active {
+  z-index: 2;
+  transform: scale(1.1);
+}
+
+main .conten .slide-caption {
+  position: absolute;
+  overflow: hidden;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  
+}
+
+main .conten .slide-caption h2 {
+  margin: 0;
+  margin-top: 5px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+main .conten .slide-caption p {
+  
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+main .conten .slide-caption a {
+  width: 100%;
+  height: 100%;
+  
+}
+
+main .conten .slide-caption a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+main .conten .slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  
+}
+
+main .conten .slider-nav button {
+  border-radius: 50%;
+  background-color: rgb(80, 80, 80,.8);
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  z-index: 3;
+}
+
+main .conten .slider-nav button.prev {
+  float: left;
+  
+}
+
+main .conten .slider-nav button.next {
+  float: right;
+}
+
+main .conten .slider-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+main .conten .dot {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+main .conten .dot.active {
+  background-color: #333;
+}
+
+
+main .info{
+  width: 100%;
+  height: 400px;
+  float: left;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 1.5s, transform 1.5s;
+  overflow: hidden;
+  background: url(nos.png) no-repeat;
+  background-size:cover;
+  background-position: center;
+  border-radius: 15px;
+  box-shadow: 0px 0px 3px 0px rgb(0, 0, 0, .6);
+}
+main .info .img{
+  width: 49%;
+  height: 100%;
+  float: right;
+
+}
+main .info .img img{
+  width: 100%;
+  height: 100%;
+}
+main .info .text{
+  width: 49%;
+  height: 100%;
+  float: left;
+  text-align: center;
+  padding: 20px;
+}
+
+footer{
+  width: 100%;
+  margin-top: 10px;
+  background-color: blue;
+  
+}
+footer p{
+  text-align: center;
+  padding: 10px;
+  color: rgb(255, 255, 255,.9);
+  font-size: 0.7em;
+  
+}
+footer p a{
+  text-decoration: none;
+  color:  rgb(255, 255, 255,.9);
+}
+footer .foot-caja{
+  max-width: 1000px;
+  margin:auto;
+  overflow: hidden;
+  display: block;
+  padding: 10px;
+}
+footer .foot-caja .foot-rigt{
+  float: right;
+  width: 49%;
+  text-align: center;
+
+}
+.foot-caja .foot-rigt form{
+  padding: 30px 20px;
+  box-shadow: 0px 2px 4px 0px #000000;
+  border-radius: 8px;
+}
+.foot-caja .foot-rigt h2{
+  font-size: 1.2em;
+  font-weight: 600;
+  color: rgb(255, 255, 255,.9);
+}
+.foot-caja .foot-rigt input[type="text"], input[type="email"], textarea, label{
+  width: 100%;
+  float: left;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.foot-caja .foot-rigt label{
+  font-size: 0.9em;
+  color: rgb(255, 255, 255,.7);
+}
+.foot-caja .foot-rigt input[type="text"], input[type="email"]{
+  padding: 5px;
+  color: rgb(255, 255, 255,.6);
+  text-align: center;
+  border-bottom: 1px solid rgb(255, 255, 255,.9);
+  color: rgb(255, 255, 255,.5);
+  margin-bottom: 10px;
+}
+.foot-caja .foot-rigt textarea{
+  border: none;
+  box-shadow: none;
+  border-bottom: 1px solid rgb(255, 255, 255,.9);
+  color: rgb(255, 255, 255,.5);
+  border-radius: 0;
+  text-align: center;
+}
+.foot-caja .foot-rigt input[type="checkbox"]{
+  margin-bottom: 20px;
+}
+.foot-caja .foot-rigt button{
+  padding: 5px;
+  border-radius: 4px;
+  background-color:rgb(255, 255, 255,.8);
+  outline: none;
+  border: none;
+}
+
+
+
+
+
+
+footer .foot-caja .foot-left{
+  float: left;
+  width: 49%;
+  
+}
+.foot-caja .foot-left .ul{
+  width: 49%;
+  float: left;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: -30px;
+}
+.foot-caja .foot-left ul label{
+  width: 100%;
+  font-size: 1em;
+  color: rgb(255, 255, 255,.8);
+}
+.foot-caja .foot-left ul li{
+  color: rgb(255, 255, 255,.6);
+  text-decoration: none;
+  font-size: 1em;
+  letter-spacing: -0.8px;
+}
+.foot-caja .foot-left ul li a{
+  color: rgb(255, 255, 255,.6);
+  text-decoration: none;
+}
+
+
+
+
+
+
+@media only screen and (max-width:680px){
+  main .cal, main .conten, main .content, main .info, main .info .img, main .info .text, footer .foot-caja .foot-rigt, footer .foot-caja .foot-left{
+    width: 100%;
+  }
+  main .conten{
+    height: 300px;
+  }
+  main .info, main .content{
+    height: 100%;
+  }
+  .foot-caja .foot-left ul li{
+    font-size: 0.8em;
+  }
+  
+}
+
+
+
+
 
 
   </style>
@@ -101,17 +575,17 @@ header a svg{
   <header>
     <div class="header">
       <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Sobre Nosotros</a></li>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#info" id="enlace">Sobre Nosotros</a></li>
         <li><a href="#">Contacto</a></li>
       </ul>
     </div>
-    <h1>Apartamentos Isabel</h1>
+    <h1>IsabelStay.Com</h1>
     <h2>¡Descubre nuestros encantadores apartamentos vacacionales con más de 20 años de experiencia en alquiler! Comodidad y privacidad aseguradas para una estancia inolvidable. ¡Reserva ahora y vive momentos únicos!</h2>
     
     
     
-    <a href="#content" id="enlace">
+    <a href="#cal" id="enlace">
       <svg id="icono" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
   <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
@@ -120,16 +594,381 @@ header a svg{
   </header>
   <main>
     <section id="content" class="content">
+    <div class="cal" id="cal">
+      <div class="container">
+    <p>Solicitud de reserva</p>
+    <form id="reservation-form">
+
+<div class="publi" id="uno" style="display:block;width: 100%">
+  <label for="fecha_llegada"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-plus" viewBox="0 0 16 16">
+  <path d="M8 7a.5.5 0 0 1 .5.5V9H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V10H6a.5.5 0 0 1 0-1h1.5V7.5A.5.5 0 0 1 8 7z"/>
+  <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+</svg> Llegada:</label>
+  <input type="text" id="fecha_llegada" readonly required placeholder="Fecha de llegada">
+  <div class="calendario" id="calendario_llegada"> <!-- Agregamos un ID único para el calendario de llegada -->
+    <!-- Contenido del calendario de llegada -->
+    <div class="mes">
+      <div class="anterior" onclick="cambiarMes('calendario_llegada', -1)">&#8249;</div>
+      <div class="actual" id="mes_actual_llegada"></div>
+      <div class="siguiente" onclick="cambiarMes('calendario_llegada', 1)">&#8250;</div>
+    </div>
+    <div class="dias_semana">
+      <div>Lun</div>
+      <div>Mar</div>
+      <div>Mié</div>
+      <div>Jue</div>
+      <div>Vie</div>
+      <div>Sáb</div>
+      <div>Dom</div>
+    </div>
+    <div class="dias" id="dias_llegada"></div>
+  </div>
+  <br>
+  <button class="sig" onclick="cambiadisplaydos('dos')">Siguiente</button>
+</div>
+
+<div class="publi" id="dos" style="display:none;width: 100%">
+  <label for="fecha_salida"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-minus" viewBox="0 0 16 16">
+  <path d="M5.5 9.5A.5.5 0 0 1 6 9h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5z"/>
+  <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+</svg> Salida:</label>
+  <input type="text" id="fecha_salida" readonly required placeholder="Fecha de salida">
+  <div class="calendario" id="calendario_salida"> <!-- Agregamos un ID único para el calendario de salida -->
+    <!-- Contenido del calendario de salida -->
+    <div class="mes">
+      <div class="anterior" onclick="cambiarMes('calendario_salida', -1)">&#8249;</div>
+      <div class="actual" id="mes_actual_salida"></div>
+      <div class="siguiente" onclick="cambiarMes('calendario_salida', 1)">&#8250;</div>
+    </div>
+    <div class="dias_semana">
+      <div>Lun</div>
+      <div>Mar</div>
+      <div>Mié</div>
+      <div>Jue</div>
+      <div>Vie</div>
+      <div>Sáb</div>
+      <div>Dom</div>
+    </div>
+    <div class="dias" id="dias_salida"></div>
+  </div>
+  <br>
+  <button class="ret" onclick="cambiadisplay('uno')">Atras</button>
+  <button class="sig" onclick="cambiadisplaytres('tres')">Siguiente</button>
+</div>
+
+<div class="publi" id="tres" style="display:none;width: 100%">
+  <label for="nombre"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+</svg> Nombre completo:</label>
+      <input type="text" id="nombre" required>
       
-    </section>
-    <section id="content" class="content">
+      <label for="email"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-at" viewBox="0 0 16 16">
+  <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z"/>
+  <path d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648Zm-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z"/>
+</svg> Correo electrónico:</label>
+      <input type="email" id="email" required>
       
+      <label for="telefono"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+  <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+</svg> Teléfono de contacto:</label>
+      <input type="tel" id="telefono" required>
+      
+      <br>
+
+      <button class="ret" onclick="cambiadisplaydos('dos')">Atras</button>
+  <button class="sig" onclick="cambiadisplaycuatro('cuatro')">Siguiente</button>
+</div>
+
+<div class="publi" id="cuatro" style="display:none;width: 100%">
+
+  <label for="num-personas"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+  <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+</svg> Número de personas:</label>
+      <input type="number" id="num-personas" required>
+      
+      <label for="num-ninos"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
+  <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/>
+</svg> Número de niños:</label>
+      <input type="number" id="num-ninos" required>
+      <br>
+      <button class="ret" onclick="cambiadisplaytres('tres')">Atras</button>
+  <button class="sig" onclick="cambiadisplaycinco('cinco')">Siguiente</button>
+</div>
+      
+     <div class="publi" id="cinco" style="display:none;width: 100%"> <label for="comentarios"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-paper" viewBox="0 0 16 16">
+  <path d="M4 0a2 2 0 0 0-2 2v1.133l-.941.502A2 2 0 0 0 0 5.4V14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V5.4a2 2 0 0 0-1.059-1.765L14 3.133V2a2 2 0 0 0-2-2H4Zm10 4.267.47.25A1 1 0 0 1 15 5.4v.817l-1 .6v-2.55Zm-1 3.15-3.75 2.25L8 8.917l-1.25.75L3 7.417V2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v5.417Zm-11-.6-1-.6V5.4a1 1 0 0 1 .53-.882L2 4.267v2.55Zm13 .566v5.734l-4.778-2.867L15 7.383Zm-.035 6.88A1 1 0 0 1 14 15H2a1 1 0 0 1-.965-.738L8 10.083l6.965 4.18ZM1 13.116V7.383l4.778 2.867L1 13.117Z"/>
+</svg> Comentarios adicionales o requisitos especiales:</label>
+      <textarea id="comentarios" rows="4"></textarea>
+      
+      <input type="checkbox" id="terminos-condiciones" required>
+      <label for="terminos-condiciones">Aceptar términos y condiciones</label>
+      
+      <button class="button" type="submit">Enviar solicitud de reserva</button>
+      <button class="ret" onclick="cambiadisplaycuatro('cuatro')">Atras</button>
+
+    </div>
+    </form>
+  </div>
+    </div>
+    <div class="conten">
+      <section class="slider">
+  
+  <div class="slider-container">
+      
+    <div class="slide">
+      <div class="slide-caption">
+       <a href=""><img src="https://cf.bstatic.com/xdata/images/hotel/square600/451465637.webp?k=dac9533e6338dd38d58bad3b24827e71d50cf871b6bed6dabe0a38fff601a435&o="></a>
+      </div>
+    </div>
+    
+    <div class="slide">
+      <div class="slide-caption">
+        <a href=""><img src="https://cf.bstatic.com/xdata/images/hotel/square600/192500545.webp?k=3210287838497d5b8dd2a2ca08839908c370f95e6063cdbe3a18c22661176a14&o="></a>
+      </div>
+    </div>
+    
+    
+    <!-- Agrega más slides aquí -->
+  </div>
+  <div class="slider-nav">
+    <button class="prev">&lt;</button>
+    <button class="next">&gt;</button>
+  </div>
+  <div class="slider-dots">
+    <!-- Agrega un botón para cada slide aquí -->
+  </div>
     </section>
+    </div>
+   </section> 
+    <section id="info" class="info">
+     <div class="img">
+       <img src="famili.png">
+     </div>
+     <div class="text">
+       <h2>Sobre Nosotros</h2>
+       <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, lorem eget tincidunt iaculis, ipsum odio consectetur velit, eu varius mauris orci non nulla. Etiam euismod aliquet nunc, eget lobortis tellus malesuada ut. Vestibulum vel vestibulum nulla, eu volutpat mi. Duis non rhoncus nisi. Nunc eu quam vitae ex elementum dignissim nec id ipsum. Vivamus ut congue massa, at tincidunt velit. Ut a nisi non elit consectetur sodales id eget velit. Fusce bibendum, quam at convallis fringilla, metus arcu malesuada metus, eu congue nisi mauris non ex. Proin convallis bibendum risus, non fermentum risus vulputate ut. Nam non quam et nibh dignissim hendrerit.</h4>
+     </div>
+   </section>
+    
+   
   </main>
   
+<footer>
+  <div class="foot-caja">
+  <div class="foot-rigt">
+    <h2>Contacto</h2>
+    <form>
+      <label for="text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+</svg> Nombre completo:</label>
+      <input type="text" name="" id="text" autocomplete="off">
+      <label for="email"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+  <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+</svg> Correo:</label>
+      <input type="email" name="" id="email"  autocomplete="off">
+      <label for="tex"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-open" viewBox="0 0 16 16">
+  <path d="M8.47 1.318a1 1 0 0 0-.94 0l-6 3.2A1 1 0 0 0 1 5.4v.817l5.75 3.45L8 8.917l1.25.75L15 6.217V5.4a1 1 0 0 0-.53-.882l-6-3.2ZM15 7.383l-4.778 2.867L15 13.117V7.383Zm-.035 6.88L8 10.082l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738ZM1 13.116l4.778-2.867L1 7.383v5.734ZM7.059.435a2 2 0 0 1 1.882 0l6 3.2A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765l6-3.2Z"/>
+</svg> Mensaje:</label>
+      <textarea id="tex"></textarea>
+      <p>Términos y condiciones</p><input type="checkbox" name="">
+      <br>
+      <button type="submit">enviar</button>
+    </form>
+  </div>
+  <div class="foot-left">
+    
+    <ul class="ul"><label>Enlaces de interes</label>
+      <li><a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+  <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z"/>
+</svg> Inicio</a></li>
+      <li><a href="#content"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-plus-fill" viewBox="0 0 16 16">
+  <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zM8.5 8.5V10H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V11H6a.5.5 0 0 1 0-1h1.5V8.5a.5.5 0 0 1 1 0z"/>
+</svg> Reservar</a></li>
+    </ul>
 
-  
+    <ul class="ul"><label>Datos de Contacto</label>
+      <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+  <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+</svg> 674409826 - 616525015 </li>
+      <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+  <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+</svg> Roblesbetoben@gmail.com </li>
+      <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+  <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+  <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+</svg>  ...  </li>
+    </ul>
+  </div>
+</div>
+  <p>© IsabelStay 2023| <a href="">Términos y condiciones</a>| <a href="">Política de Cookies</a>. Todos los derechos reservados.</p>
+</footer>
+  <script type="text/javascript">
+const slider = document.querySelector('.slider');
+const sliderContainer = slider.querySelector('.slider-container');
+const slides = slider.querySelectorAll('.slide');
+const prevBtn = slider.querySelector('.prev');
+const nextBtn = slider.querySelector('.next');
+const dots = slider.querySelectorAll('.slider-dots button');
 
+let currentSlide = 0;
+let interval;
+
+const prevSlide = () => {
+  goToSlide(currentSlide - 1);
+};
+
+const nextSlide = () => {
+  goToSlide(currentSlide + 1);
+};
+
+const goToSlide = (n) => {
+  if (n < 0) {
+    n = slides.length - 1;
+  } else if (n > slides.length - 1) {
+    n = 0;
+  }
+
+  currentSlide = n;
+  sliderContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+  updateDots();
+};
+
+const updateDots = () => {
+  dots.forEach((dot, i) => {
+    if (i === currentSlide) {
+      dot.classList.add('active');
+    } else {
+      dot.classList.remove('active');
+    }
+  });
+};
+
+const startSlider = () => {
+  interval = setInterval(nextSlide, 4000);
+};
+
+const stopSlider = () => {
+  clearInterval(interval);
+};
+
+prevBtn.addEventListener('click', prevSlide);
+nextBtn.addEventListener('click', nextSlide);
+
+dots.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    goToSlide(i);
+    stopSlider();
+  });
+});
+
+slider.addEventListener('mouseenter', stopSlider);
+slider.addEventListener('mouseleave', startSlider);
+
+startSlider();
+
+</script>
+<script type="text/javascript">
+const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+    const diasSemana = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"];
+
+    function mostrarCalendario(idCalendario, mes, año) {
+      const calendario = document.getElementById(idCalendario);
+      const mesActual = calendario.querySelector(".actual");
+      const dias = calendario.querySelector(".dias");
+
+      mesActual.textContent = `${meses[mes]} ${año}`;
+
+      const primerDia = new Date(año, mes, 1);
+      const ultimoDia = new Date(año, mes + 1, 0);
+      const diaInicioSemana = primerDia.getDay();
+      const hoy = new Date();
+
+      dias.innerHTML = "";
+
+      for (let i = 0; i < diaInicioSemana; i++) {
+        const diaVacio = document.createElement("div");
+        dias.appendChild(diaVacio);
+      }
+
+      for (let dia = 1; dia <= ultimoDia.getDate(); dia++) {
+        const diaCalendario = document.createElement("div");
+        diaCalendario.textContent = dia;
+
+        const fechaActual = new Date(año, mes, dia);
+        if (fechaActual < hoy || (idCalendario === "calendario_salida" && fechaLlegadaSeleccionada && fechaActual < fechaLlegadaSeleccionada)) {
+          diaCalendario.classList.add("disabled"); // Agregamos la clase "disabled" a los días anteriores al día de hoy o a la fecha de llegada en el calendario de salida
+        } else {
+          diaCalendario.addEventListener("click", () => seleccionarFecha(idCalendario, año, mes, dia));
+        }
+
+        dias.appendChild(diaCalendario);
+
+        if (idCalendario === "calendario_llegada" && fechaLlegadaSeleccionada && dia === fechaLlegadaSeleccionada.getDate() && mes === fechaLlegadaSeleccionada.getMonth() && año === fechaLlegadaSeleccionada.getFullYear()) {
+          diaCalendario.classList.add("seleccionado");
+        }
+
+        if (idCalendario === "calendario_salida" && fechaSalidaSeleccionada && dia === fechaSalidaSeleccionada.getDate() && mes === fechaSalidaSeleccionada.getMonth() && año === fechaSalidaSeleccionada.getFullYear()) {
+          diaCalendario.classList.add("seleccionado-salida");
+        }
+      }
+    }
+
+    function cambiarMes(idCalendario, delta) {
+      const calendario = document.getElementById(idCalendario);
+
+      if (idCalendario === "calendario_llegada" && !fechaLlegadaSeleccionada) {
+        fechaLlegadaSeleccionada = new Date();
+      } else if (idCalendario === "calendario_salida" && !fechaSalidaSeleccionada) {
+        fechaSalidaSeleccionada = new Date();
+      }
+
+      if (idCalendario === "calendario_llegada") {
+        fechaLlegadaSeleccionada.setMonth(fechaLlegadaSeleccionada.getMonth() + delta);
+        mostrarCalendario(idCalendario, fechaLlegadaSeleccionada.getMonth(), fechaLlegadaSeleccionada.getFullYear());
+      } else if (idCalendario === "calendario_salida") {
+        fechaSalidaSeleccionada.setMonth(fechaSalidaSeleccionada.getMonth() + delta);
+        mostrarCalendario(idCalendario, fechaSalidaSeleccionada.getMonth(), fechaSalidaSeleccionada.getFullYear());
+      }
+    }
+
+    function seleccionarFecha(idCalendario, año, mes, dia) {
+      const fechaSeleccionada = new Date(año, mes, dia);
+      const fechaFormateada = obtenerFechaFormateada(fechaSeleccionada);
+
+      if (idCalendario === "calendario_llegada") {
+        fechaLlegadaSeleccionada = fechaSeleccionada;
+        document.getElementById("fecha_llegada").value = fechaFormateada;
+
+        // También seleccionamos automáticamente la fecha de llegada en el calendario de salida
+        fechaSalidaSeleccionada = fechaSeleccionada;
+        mostrarCalendario("calendario_salida", fechaSalidaSeleccionada.getMonth(), fechaSalidaSeleccionada.getFullYear());
+      } else if (idCalendario === "calendario_salida") {
+        if (fechaSeleccionada < fechaLlegadaSeleccionada) {
+          // Si la fecha de salida es anterior a la fecha de llegada, no hacemos nada
+          return;
+        }
+        fechaSalidaSeleccionada = fechaSeleccionada;
+        document.getElementById("fecha_salida").value = fechaFormateada;
+      }
+
+      mostrarCalendario(idCalendario, mes, año);
+    }
+
+    function obtenerFechaFormateada(fecha) {
+      const dia = fecha.getDate().toString().padStart(2, "0");
+      const mes = (fecha.getMonth() + 1).toString().padStart(2, "0");
+      const año = fecha.getFullYear();
+
+      return `${dia}/${mes}/${año}`;
+    }
+
+    let fechaLlegadaSeleccionada = null;
+    let fechaSalidaSeleccionada = null;
+
+    mostrarCalendario("calendario_llegada", new Date().getMonth(), new Date().getFullYear());
+    mostrarCalendario("calendario_salida", new Date().getMonth(), new Date().getFullYear());
+</script>
   <script type="text/javascript">
 function moverIcono() {
   var icono = document.getElementById("icono");
@@ -180,6 +1019,156 @@ moverIcono();
     enlace.setAttribute('href', nuevaUrl);
   }
 });
+
+
+function detectarEntrada(id) {
+      var section = document.getElementById(id);
+      var sectionOffset = section.getBoundingClientRect().top;
+
+      var windowHeight = window.innerHeight;
+
+      if (sectionOffset < windowHeight) {
+        section.style.opacity = "1";
+        section.style.transform = "translateX(0)";
+      }
+    }
+
+    function detectarEntradaEnContent() {
+      detectarEntrada("content");
+    }
+
+    function detectarEntradaEnInfo() {
+      detectarEntrada("info");
+    }
+
+    function detectarEntradaEnCal() {
+      detectarEntrada("cal");
+    }
+
+    window.addEventListener("scroll", detectarEntradaEnContent);
+    window.addEventListener("scroll", detectarEntradaEnInfo);
+    window.addEventListener("scroll", detectarEntradaEnCal);
+
+    window.addEventListener("resize", detectarEntradaEnContent);
+    window.addEventListener("resize", detectarEntradaEnInfo);
+    window.addEventListener("resize", detectarEntradaEnCal);
+
+    setTimeout(function() {
+      detectarEntradaEnContent();
+      detectarEntradaEnInfo();
+      detectarEntradaEnCal();
+    }, 1500);
+
+
+   
+
+
   </script>
+<script type="text/javascript">
+   function cambiadisplay(id)  
+{  
+  
+if (document.getElementById('uno').style.display=='block') {  
+document.getElementById('uno').style.display='none';  
+}else{  
+document.getElementById('uno').style.display='block';  
+document.getElementById('dos').style.display='none';  
+document.getElementById('tres').style.display='none';  
+document.getElementById('cuatro').style.display='none'; 
+document.getElementById('cinco').style.display='none'; 
+document.getElementById('seis').style.display='none'; 
+
+}  
+  
+  
+}  
+  
+function cambiadisplaydos(id)  
+{  
+  
+if (document.getElementById('dos').style.display=='block') {  
+document.getElementById('dos').style.display='none';  
+}else{  
+document.getElementById('uno').style.display='none';  
+document.getElementById('dos').style.display='block';  
+document.getElementById('tres').style.display='none'; 
+document.getElementById('cuatro').style.display='none';
+document.getElementById('cinco').style.display='none'; 
+document.getElementById('seis').style.display='none'; 
+
+}  
+  
+  
+} 
+function cambiadisplaytres(id)  
+{  
+  
+if (document.getElementById('tres').style.display=='block') {  
+document.getElementById('tres').style.display='none';  
+}else{  
+document.getElementById('uno').style.display='none';  
+document.getElementById('dos').style.display='none';  
+document.getElementById('tres').style.display='block'; 
+document.getElementById('cuatro').style.display='none'; 
+document.getElementById('cinco').style.display='none'; 
+document.getElementById('seis').style.display='none'; 
+
+}  
+  
+  
+}   
+function cambiadisplaycuatro(id)  
+{  
+  
+if (document.getElementById('cuatro').style.display=='block') {  
+document.getElementById('cuatro').style.display='none';  
+}else{  
+document.getElementById('uno').style.display='none';  
+document.getElementById('dos').style.display='none';  
+document.getElementById('tres').style.display='none'; 
+document.getElementById('cuatro').style.display='block'; 
+document.getElementById('cinco').style.display='none'; 
+document.getElementById('seis').style.display='none'; 
+
+}  
+  
+  
+}  
+function cambiadisplaycinco(id)  
+{  
+  
+if (document.getElementById('cinco').style.display=='block') {  
+document.getElementById('cinco').style.display='none';  
+}else{  
+document.getElementById('uno').style.display='none';  
+document.getElementById('dos').style.display='none';  
+document.getElementById('tres').style.display='none'; 
+document.getElementById('cuatro').style.display='none'; 
+document.getElementById('cinco').style.display='block';
+document.getElementById('seis').style.display='none';
+}  
+  
+  
+} 
+function cambiadisplayseis(id)  
+{  
+  
+if (document.getElementById('seis').style.display=='block') {  
+document.getElementById('seis').style.display='none';  
+}else{  
+document.getElementById('uno').style.display='none';  
+document.getElementById('dos').style.display='none';  
+document.getElementById('tres').style.display='none'; 
+document.getElementById('cuatro').style.display='none'; 
+document.getElementById('cinco').style.display='none'; 
+document.getElementById('seis').style.display='block'; 
+
+}  
+  
+  
+} 
+</script>
+
+
 </body>
 </html>
