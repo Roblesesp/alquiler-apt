@@ -331,17 +331,23 @@ main .conten .slide-caption h2 {
   font-weight: 600;
 }
 
-main .conten .slide-caption p {
-  
-  font-size: 14px;
-  line-height: 1.5;
-}
 
 main .conten .slide-caption a {
   width: 100%;
   height: 100%;
   
 }
+main .conten .slide-caption a p{
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(80, 80, 80,.8);
+  padding: 4px;
+  border-radius: 3px;
+  font-size: 0.8em;
+}
+
 
 main .conten .slide-caption a:hover {
   background-color: #333;
@@ -537,6 +543,7 @@ footer .foot-caja .foot-left{
   text-decoration: none;
   font-size: 1em;
   letter-spacing: -0.8px;
+  display: inline-block;
 }
 .foot-caja .foot-left ul li a{
   color: rgb(255, 255, 255,.6);
@@ -577,7 +584,7 @@ footer .foot-caja .foot-left{
       <ul>
         <li><a href="index.html">Inicio</a></li>
         <li><a href="#info" id="enlace">Sobre Nosotros</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li><a href="#foorm" id="enlace2">Contacto</a></li>
       </ul>
     </div>
     <h1>IsabelStay.Com</h1>
@@ -585,7 +592,7 @@ footer .foot-caja .foot-left{
     
     
     
-    <a href="#cal" id="enlace">
+    <a href="#content" id="enlace3">
       <svg id="icono" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
   <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
@@ -717,13 +724,17 @@ footer .foot-caja .foot-left{
       
     <div class="slide">
       <div class="slide-caption">
-       <a href=""><img src="https://cf.bstatic.com/xdata/images/hotel/square600/451465637.webp?k=dac9533e6338dd38d58bad3b24827e71d50cf871b6bed6dabe0a38fff601a435&o="></a>
+       <a href="">
+        <p class="">APT: Macedonia</p>
+        <img src="https://cf.bstatic.com/xdata/images/hotel/square600/451465637.webp?k=dac9533e6338dd38d58bad3b24827e71d50cf871b6bed6dabe0a38fff601a435&o="></a>
       </div>
     </div>
     
     <div class="slide">
       <div class="slide-caption">
-        <a href=""><img src="https://cf.bstatic.com/xdata/images/hotel/square600/192500545.webp?k=3210287838497d5b8dd2a2ca08839908c370f95e6063cdbe3a18c22661176a14&o="></a>
+        <a href="">
+          <p class="">APT: Olivia</p>
+          <img src="https://cf.bstatic.com/xdata/images/hotel/square600/192500545.webp?k=3210287838497d5b8dd2a2ca08839908c370f95e6063cdbe3a18c22661176a14&o="></a>
       </div>
     </div>
     
@@ -757,7 +768,7 @@ footer .foot-caja .foot-left{
   <div class="foot-caja">
   <div class="foot-rigt">
     <h2>Contacto</h2>
-    <form>
+    <form id="foorm">
       <label for="text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
   <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
 </svg> Nombre completo:</label>
@@ -800,7 +811,7 @@ footer .foot-caja .foot-left{
     </ul>
   </div>
 </div>
-  <p>© IsabelStay 2023| <a href="">Términos y condiciones</a>| <a href="">Política de Cookies</a>. Todos los derechos reservados.</p>
+  <p>© IsabelStay 2023 | <a href="">Términos y condiciones</a> | <a href="">Política de Cookies</a>. Todos los derechos reservados.</p>
 </footer>
   <script type="text/javascript">
 const slider = document.querySelector('.slider');
@@ -870,104 +881,114 @@ startSlider();
 </script>
 <script type="text/javascript">
 const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-    const diasSemana = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"];
+const diasSemana = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"];
 
-    function mostrarCalendario(idCalendario, mes, año) {
-      const calendario = document.getElementById(idCalendario);
-      const mesActual = calendario.querySelector(".actual");
-      const dias = calendario.querySelector(".dias");
+function mostrarCalendario(idCalendario, mes, año) {
+  const calendario = document.getElementById(idCalendario);
+  const mesActual = calendario.querySelector(".actual");
+  const dias = calendario.querySelector(".dias");
 
-      mesActual.textContent = `${meses[mes]} ${año}`;
+  mesActual.textContent = `${meses[mes]} ${año}`;
 
-      const primerDia = new Date(año, mes, 1);
-      const ultimoDia = new Date(año, mes + 1, 0);
-      const diaInicioSemana = primerDia.getDay();
-      const hoy = new Date();
+  const primerDia = new Date(año, mes, 1);
+  const ultimoDia = new Date(año, mes + 1, 0);
+  const diaInicioSemana = primerDia.getDay();
+  const hoy = new Date();
 
-      dias.innerHTML = "";
+  dias.innerHTML = "";
 
-      for (let i = 0; i < diaInicioSemana; i++) {
-        const diaVacio = document.createElement("div");
-        dias.appendChild(diaVacio);
-      }
+  for (let i = 0; i < diaInicioSemana; i++) {
+    const diaVacio = document.createElement("div");
+    dias.appendChild(diaVacio);
+  }
 
-      for (let dia = 1; dia <= ultimoDia.getDate(); dia++) {
-        const diaCalendario = document.createElement("div");
-        diaCalendario.textContent = dia;
+  for (let dia = 1; dia <= ultimoDia.getDate(); dia++) {
+    const diaCalendario = document.createElement("div");
+    diaCalendario.textContent = dia;
 
-        const fechaActual = new Date(año, mes, dia);
-        if (fechaActual < hoy || (idCalendario === "calendario_salida" && fechaLlegadaSeleccionada && fechaActual < fechaLlegadaSeleccionada)) {
-          diaCalendario.classList.add("disabled"); // Agregamos la clase "disabled" a los días anteriores al día de hoy o a la fecha de llegada en el calendario de salida
-        } else {
-          diaCalendario.addEventListener("click", () => seleccionarFecha(idCalendario, año, mes, dia));
-        }
-
-        dias.appendChild(diaCalendario);
-
-        if (idCalendario === "calendario_llegada" && fechaLlegadaSeleccionada && dia === fechaLlegadaSeleccionada.getDate() && mes === fechaLlegadaSeleccionada.getMonth() && año === fechaLlegadaSeleccionada.getFullYear()) {
-          diaCalendario.classList.add("seleccionado");
-        }
-
-        if (idCalendario === "calendario_salida" && fechaSalidaSeleccionada && dia === fechaSalidaSeleccionada.getDate() && mes === fechaSalidaSeleccionada.getMonth() && año === fechaSalidaSeleccionada.getFullYear()) {
-          diaCalendario.classList.add("seleccionado-salida");
-        }
-      }
+    const fechaActual = new Date(año, mes, dia);
+    if (fechaActual < hoy || (idCalendario === "calendario_salida" && fechaLlegadaSeleccionada && fechaActual < fechaLlegadaSeleccionada)) {
+      diaCalendario.classList.add("disabled"); // Agregamos la clase "disabled" a los días anteriores al día de hoy o a la fecha de llegada en el calendario de salida
+    } else {
+      diaCalendario.addEventListener("click", () => seleccionarFecha(idCalendario, año, mes, dia));
     }
 
-    function cambiarMes(idCalendario, delta) {
-      const calendario = document.getElementById(idCalendario);
+    dias.appendChild(diaCalendario);
 
-      if (idCalendario === "calendario_llegada" && !fechaLlegadaSeleccionada) {
-        fechaLlegadaSeleccionada = new Date();
-      } else if (idCalendario === "calendario_salida" && !fechaSalidaSeleccionada) {
-        fechaSalidaSeleccionada = new Date();
-      }
-
-      if (idCalendario === "calendario_llegada") {
-        fechaLlegadaSeleccionada.setMonth(fechaLlegadaSeleccionada.getMonth() + delta);
-        mostrarCalendario(idCalendario, fechaLlegadaSeleccionada.getMonth(), fechaLlegadaSeleccionada.getFullYear());
-      } else if (idCalendario === "calendario_salida") {
-        fechaSalidaSeleccionada.setMonth(fechaSalidaSeleccionada.getMonth() + delta);
-        mostrarCalendario(idCalendario, fechaSalidaSeleccionada.getMonth(), fechaSalidaSeleccionada.getFullYear());
-      }
+    if (idCalendario === "calendario_llegada" && fechaLlegadaSeleccionada && dia === fechaLlegadaSeleccionada.getDate() && mes === fechaLlegadaSeleccionada.getMonth() && año === fechaLlegadaSeleccionada.getFullYear()) {
+      diaCalendario.classList.add("seleccionado");
     }
 
-    function seleccionarFecha(idCalendario, año, mes, dia) {
-      const fechaSeleccionada = new Date(año, mes, dia);
-      const fechaFormateada = obtenerFechaFormateada(fechaSeleccionada);
-
-      if (idCalendario === "calendario_llegada") {
-        fechaLlegadaSeleccionada = fechaSeleccionada;
-        document.getElementById("fecha_llegada").value = fechaFormateada;
-
-        // También seleccionamos automáticamente la fecha de llegada en el calendario de salida
-        fechaSalidaSeleccionada = fechaSeleccionada;
-        mostrarCalendario("calendario_salida", fechaSalidaSeleccionada.getMonth(), fechaSalidaSeleccionada.getFullYear());
-      } else if (idCalendario === "calendario_salida") {
-        if (fechaSeleccionada < fechaLlegadaSeleccionada) {
-          // Si la fecha de salida es anterior a la fecha de llegada, no hacemos nada
-          return;
-        }
-        fechaSalidaSeleccionada = fechaSeleccionada;
-        document.getElementById("fecha_salida").value = fechaFormateada;
-      }
-
-      mostrarCalendario(idCalendario, mes, año);
+    if (idCalendario === "calendario_salida" && fechaSalidaSeleccionada && dia === fechaSalidaSeleccionada.getDate() && mes === fechaSalidaSeleccionada.getMonth() && año === fechaSalidaSeleccionada.getFullYear()) {
+      diaCalendario.classList.add("seleccionado-salida");
     }
+  }
+}
 
-    function obtenerFechaFormateada(fecha) {
-      const dia = fecha.getDate().toString().padStart(2, "0");
-      const mes = (fecha.getMonth() + 1).toString().padStart(2, "0");
-      const año = fecha.getFullYear();
+function cambiarMes(idCalendario, delta) {
+  const calendario = document.getElementById(idCalendario);
 
-      return `${dia}/${mes}/${año}`;
+  if (idCalendario === "calendario_llegada" && !fechaLlegadaSeleccionada) {
+    fechaLlegadaSeleccionada = new Date();
+  } else if (idCalendario === "calendario_salida" && !fechaSalidaSeleccionada) {
+    fechaSalidaSeleccionada = new Date();
+  }
+
+  if (idCalendario === "calendario_llegada") {
+    fechaLlegadaSeleccionada.setMonth(fechaLlegadaSeleccionada.getMonth() + delta);
+    mostrarCalendario(idCalendario, fechaLlegadaSeleccionada.getMonth(), fechaLlegadaSeleccionada.getFullYear());
+  } else if (idCalendario === "calendario_salida") {
+    fechaSalidaSeleccionada.setMonth(fechaSalidaSeleccionada.getMonth() + delta);
+    mostrarCalendario(idCalendario, fechaSalidaSeleccionada.getMonth(), fechaSalidaSeleccionada.getFullYear());
+  }
+}
+
+function seleccionarFecha(idCalendario, año, mes, dia) {
+  const fechaSeleccionada = new Date(año, mes, dia);
+  const fechaFormateada = obtenerFechaFormateada(fechaSeleccionada);
+
+  if (idCalendario === "calendario_llegada") {
+    fechaLlegadaSeleccionada = fechaSeleccionada;
+    document.getElementById("fecha_llegada").value = fechaFormateada;
+  } else if (idCalendario === "calendario_salida") {
+    if (fechaSeleccionada < fechaLlegadaSeleccionada) {
+      // Si la fecha de salida es anterior a la fecha de llegada, no hacemos nada
+      return;
     }
+    fechaSalidaSeleccionada = fechaSeleccionada;
+    document.getElementById("fecha_salida").value = fechaFormateada;
+  }
 
-    let fechaLlegadaSeleccionada = null;
-    let fechaSalidaSeleccionada = null;
+  mostrarCalendario(idCalendario, mes, año);
+}
 
-    mostrarCalendario("calendario_llegada", new Date().getMonth(), new Date().getFullYear());
-    mostrarCalendario("calendario_salida", new Date().getMonth(), new Date().getFullYear());
+function obtenerFechaFormateada(fecha) {
+  const dia = fecha.getDate().toString().padStart(2, "0");
+  const mes = (fecha.getMonth() + 1).toString().padStart(2, "0");
+  const año = fecha.getFullYear();
+
+  return `${dia}/${mes}/${año}`;
+}
+
+let fechaLlegadaSeleccionada = null;
+let fechaSalidaSeleccionada = null;
+
+mostrarCalendario("calendario_llegada", new Date().getMonth(), new Date().getFullYear());
+mostrarCalendario("calendario_salida", new Date().getMonth(), new Date().getFullYear());
+
+// Nueva función para permitir seleccionar cualquier día del mes en los meses siguientes
+function habilitarSeleccion(idCalendario) {
+  const calendario = document.getElementById(idCalendario);
+  const dias = calendario.querySelector(".dias").childNodes;
+
+  for (let i = 0; i < dias.length; i++) {
+    if (!dias[i].classList.contains("disabled")) {
+      dias[i].addEventListener("click", () => seleccionarFecha(idCalendario, new Date().getFullYear(), new Date().getMonth(), parseInt(dias[i].textContent)));
+    }
+  }
+}
+
+
 </script>
   <script type="text/javascript">
 function moverIcono() {
@@ -1020,47 +1041,76 @@ moverIcono();
   }
 });
 
-
-function detectarEntrada(id) {
-      var section = document.getElementById(id);
-      var sectionOffset = section.getBoundingClientRect().top;
-
-      var windowHeight = window.innerHeight;
-
-      if (sectionOffset < windowHeight) {
-        section.style.opacity = "1";
-        section.style.transform = "translateX(0)";
-      }
-    }
-
-    function detectarEntradaEnContent() {
-      detectarEntrada("content");
-    }
-
-    function detectarEntradaEnInfo() {
-      detectarEntrada("info");
-    }
-
-    function detectarEntradaEnCal() {
-      detectarEntrada("cal");
-    }
-
-    window.addEventListener("scroll", detectarEntradaEnContent);
-    window.addEventListener("scroll", detectarEntradaEnInfo);
-    window.addEventListener("scroll", detectarEntradaEnCal);
-
-    window.addEventListener("resize", detectarEntradaEnContent);
-    window.addEventListener("resize", detectarEntradaEnInfo);
-    window.addEventListener("resize", detectarEntradaEnCal);
-
-    setTimeout(function() {
-      detectarEntradaEnContent();
-      detectarEntradaEnInfo();
-      detectarEntradaEnCal();
-    }, 1500);
+document.getElementById("enlace2").addEventListener("click", function(event) {
+  event.preventDefault();
+  var destino = document.querySelector(this.getAttribute("href")); 
+  if (destino) {
+    var posicion = destino.offsetTop;
+    window.scrollTo({top: posicion, behavior: "smooth", duration: 1500 });}
+  });
 
 
-   
+   window.addEventListener('DOMContentLoaded', function() {
+  var enlaces = document.getElementsByClassName('enlace2');
+  for (var i = 0; i < enlaces.length; i++) {
+    var enlace = enlaces[i];
+    var url = enlace.getAttribute('href');
+    var nuevaUrl = url.replace(/\.(php|html)$/, '');
+    enlace.textContent = nuevaUrl;
+    enlace.setAttribute('href', nuevaUrl);
+  }
+});
+
+   document.getElementById("enlace3").addEventListener("click", function(event) {
+  event.preventDefault();
+  var destino = document.querySelector(this.getAttribute("href")); 
+  if (destino) {
+    var posicion = destino.offsetTop;
+    window.scrollTo({top: posicion, behavior: "smooth", duration: 1500 });}
+  });
+
+
+   window.addEventListener('DOMContentLoaded', function() {
+  var enlaces = document.getElementsByClassName('enlace3');
+  for (var i = 0; i < enlaces.length; i++) {
+    var enlace = enlaces[i];
+    var url = enlace.getAttribute('href');
+    var nuevaUrl = url.replace(/\.(php|html)$/, '');
+    enlace.textContent = nuevaUrl;
+    enlace.setAttribute('href', nuevaUrl);
+  }
+});
+
+
+   function detectarEntrada(id) {
+  var section = document.getElementById(id);
+  var sectionOffset = section.getBoundingClientRect().top;
+  var windowHeight = window.innerHeight;
+
+  if (sectionOffset < windowHeight) {
+    section.style.opacity = "1";
+    section.style.transform = "translateX(0)";
+  } else {
+    section.style.opacity = "0";
+    section.style.transform = "translateX(-20px)";
+  }
+}
+
+function aplicarEfectoDeEntrada() {
+  detectarEntrada("content");
+  detectarEntrada("info");
+  detectarEntrada("cal");
+}
+
+window.addEventListener("scroll", aplicarEfectoDeEntrada);
+window.addEventListener("resize", aplicarEfectoDeEntrada);
+
+setInterval(aplicarEfectoDeEntrada, 100); // Comprueba constantemente el estado de los elementos
+
+setTimeout(aplicarEfectoDeEntrada, 1500); // Aplicar efecto de entrada inicial después de 1500 ms
+
+
+
 
 
   </script>
